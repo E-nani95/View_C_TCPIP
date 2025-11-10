@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Swiper demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+  <!-- Link Swiper's CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+  <!-- Demo styles -->
+  <style>
+    body{
+        background-color: black;
+    }
+    .container{
+        width: 100%;
+        height: 100vh;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        color: white;
+    }
+
+    .swiper{
+        width: 1000px;
+        height: 500px;
+        border-radius: 35px;
+    }
+    .swiper-slide{
+        border-radius: 35px;
+        box-shadow: 5px 10px 10px rgba(255, 255, 255, 30%);
+    }
+    .swiper-slide:hover .coverbg{
+            opacity: 1;
+    }
+
+    .swiper-pagination-bullet{
+        background-color: white;
+    }
+    .s1{
+        background: url("./img/시퀀스\ 다이어그램.png") no-repeat center center/contain;
+    }
+    
+    .s2{
+      position: relative;
+    }
+    video{
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    
+    .coverbg{
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 50%);
+        backdrop-filter: blur(8px);
+        opacity: 0;
+        transition: all .3s;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+    }
+
+  </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>AI Image Gateway</h1>
+        <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide s1">
+        <div class="coverbg">
+                <h1>Sequence Diagram</h1>
+                <p>LED 작동 시퀀스 다이어그램</p>
+        </div>
+      </div>
+      <div class="swiper-slide s2">
+                <video src="img/my-video.mp4" autoplay loop></video>
+                <div class="coverbg">
+                <h1>TEST</h1>
+                <p>TEST 비디오</p>
+        </div>
+    </div>
+    </div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-pagination"></div>
+  </div>
+    </div>
+  <!-- Swiper -->
+  
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      slidesPerView: 1,
+      spaceBetween: 30,
+      loop: true,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+  </script>
+</body>
+
+</html>
